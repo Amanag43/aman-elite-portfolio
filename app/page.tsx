@@ -5,14 +5,22 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="bg-[#0b0b0b] text-white min-h-screen font-sans">
+    <main className="bg-[#0b0b0b] text-white min-h-screen font-sans overflow-hidden">
 
-      {/* HERO */}
-      <section className="text-center py-36 px-6">
+      {/* 🌌 ANIMATED BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute w-[600px] h-[600px] bg-blue-600 rounded-full blur-[180px] opacity-20 top-[-100px] left-[-100px] animate-pulse"></div>
+        <div className="absolute w-[600px] h-[600px] bg-purple-600 rounded-full blur-[180px] opacity-20 bottom-[-100px] right-[-100px] animate-pulse"></div>
+      </div>
+
+      {/* 🍎 HERO */}
+      <section className="text-center py-40 px-6">
+
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl font-bold"
+          transition={{ duration: 0.8 }}
+          className="text-6xl md:text-7xl font-bold tracking-tight"
         >
           Aman Agarwal
         </motion.h1>
@@ -22,9 +30,9 @@ export default function Home() {
         </p>
 
         <p className="max-w-3xl mx-auto mt-8 text-gray-300 text-lg">
-          I design and build production-grade mobile applications,
-          scalable backend systems, and real-world technology solutions
-          focused on performance, reliability, and impact.
+          I build production-grade mobile systems, scalable backend
+          infrastructure, and real-world technology solutions designed for
+          performance, reliability, and impact.
         </p>
 
         <div className="flex justify-center gap-8 mt-10 text-3xl">
@@ -32,112 +40,99 @@ export default function Home() {
           <a href="https://linkedin.com/in/aman-agarwal-396921245"><FaLinkedin /></a>
           <a href="mailto:aman.04614802823@ece.mait.ac.in"><FaEnvelope /></a>
         </div>
+
       </section>
 
-      {/* FEATURED PROJECT */}
+      {/* 🚀 FEATURED PROJECT */}
       <section className="max-w-6xl mx-auto px-8 py-24">
+
         <h2 className="text-4xl font-bold text-center mb-16">
-          Featured Engineering Projects
+          Flagship Engineering Work
         </h2>
 
-        <div className="space-y-16">
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="bg-[#141414]/80 backdrop-blur-xl p-10 rounded-3xl border border-white/10 shadow-2xl"
+        >
+          <h3 className="text-3xl font-semibold">
+            Emergency Response IoT System
+          </h3>
 
-          {/* Project 1 */}
-          <div className="bg-[#141414] p-8 rounded-2xl">
-            <h3 className="text-3xl font-semibold">
-              Emergency Response IoT System
-            </h3>
+          <p className="mt-4 text-gray-400 text-lg">
+            A production-grade safety platform integrating a smart wearable
+            device with real-time emergency detection, automatic SOS triggering,
+            and live GPS tracking backed by secure scalable infrastructure.
+          </p>
 
-            <p className="mt-4 text-gray-400">
-              A production-grade safety platform integrating a smart wearable device
-              with a mobile application and real-time backend infrastructure to detect
-              emergencies, trigger automatic SOS alerts, and provide live GPS tracking.
-            </p>
-
-            <ul className="mt-6 space-y-2 text-gray-300">
-              <li>• Wearable-triggered emergency detection</li>
-              <li>• Real-time location tracking with map visualization</li>
-              <li>• Secure authentication & event logging</li>
-              <li>• Scalable backend using REST APIs</li>
-            </ul>
+          <div className="flex gap-4 mt-8">
+            <a
+              href="https://github.com/Amanag43"
+              className="bg-white text-black px-6 py-3 rounded-full font-semibold"
+            >
+              View Code
+            </a>
           </div>
+        </motion.div>
 
-          {/* Project 2 */}
-          <div className="bg-[#141414] p-8 rounded-2xl">
-            <h3 className="text-3xl font-semibold">
-              Ryde — Ride Booking Application
-            </h3>
+      </section>
 
-            <p className="mt-4 text-gray-400">
-              A cross-platform ride-hailing mobile application inspired by real-world
-              systems like Uber, featuring modular architecture, onboarding flow,
-              and authentication-ready routing.
-            </p>
-          </div>
+      {/* 🧠 ENGINEERING PHILOSOPHY (UNIQUE) */}
+      <section className="py-28 px-8 text-center">
+
+        <h2 className="text-4xl font-bold mb-10">
+          Engineering Philosophy
+        </h2>
+
+        <p className="max-w-3xl mx-auto text-gray-400 text-lg">
+          I believe great software is not just about writing code —
+          it is about solving real problems, designing scalable systems,
+          and delivering reliable user experiences under real-world constraints.
+        </p>
+
+      </section>
+
+      {/* 📈 GROWTH TIMELINE (UNIQUE) */}
+      <section className="py-28 px-8 bg-[#111]">
+
+        <h2 className="text-4xl font-bold text-center mb-16">
+          Growth Timeline
+        </h2>
+
+        <div className="max-w-3xl mx-auto space-y-8 text-gray-300">
+
+          <div>2023 — Started BTech & core programming</div>
+          <div>2024 — Data Structures & Full-Stack Development</div>
+          <div>2025 — Android Development & Real Projects</div>
+          <div>2026 — Building Production Systems & Preparing for FAANG Internships</div>
 
         </div>
+
       </section>
 
-      {/* SKILLS */}
-      <section className="bg-[#111] py-24 px-8">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Technical Skills
+      {/* 🧩 CURRENTLY BUILDING */}
+      <section className="py-28 px-8 text-center">
+
+        <h2 className="text-4xl font-bold mb-10">
+          Currently Building
         </h2>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-gray-300">
+        <p className="text-gray-400 text-lg">
+          Cross-platform ride booking system inspired by real-world
+          transportation platforms, focusing on scalable architecture
+          and real-time features.
+        </p>
 
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              Programming
-            </h3>
-            <p>Java, Kotlin, Python, C, C++, SQL</p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              Mobile & Web
-            </h3>
-            <p>Android, React Native, React JS</p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              Backend & Databases
-            </h3>
-            <p>REST APIs, MySQL, Firebase, FastAPI</p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              Tools & Cloud
-            </h3>
-            <p>Git, Linux, AWS</p>
-          </div>
-
-        </div>
       </section>
 
-      {/* ACHIEVEMENTS */}
-      <section className="py-24 px-8 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Achievements & Leadership
-        </h2>
+      {/* 📩 CONTACT */}
+      <section className="text-center py-32 bg-[#111]">
 
-        <ul className="space-y-4 text-gray-300 text-lg">
-          <li>🏆 Smart India Hackathon — National Level Participant</li>
-          <li>💻 CodeX 2.0 Inter-College Hackathon Participant</li>
-          <li>🎯 Coordinator — Indian Society for Technical Education</li>
-        </ul>
-      </section>
-
-      {/* CONTACT */}
-      <section className="text-center py-28 bg-[#111]">
         <h2 className="text-4xl font-bold mb-6">
           Let’s Build Something Impactful
         </h2>
 
         <p className="text-gray-400 mb-8 text-lg">
-          Open to Software Engineering Internships and collaboration opportunities.
+          Open to Software Engineering Internships and collaborations.
         </p>
 
         <a
@@ -146,6 +141,7 @@ export default function Home() {
         >
           Contact Me
         </a>
+
       </section>
 
     </main>
